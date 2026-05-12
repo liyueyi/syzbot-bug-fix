@@ -20,16 +20,12 @@ cd /tmp/liyy-crash && git checkout mcp && make
 claude mcp add crash-mcp -- /tmp/liyy-crash/crash-mcp-client /tmp/crash.sock
 ```
 
-## Prerequisites
-
-`qemu-system-x86_64` `busybox` `gcc` `go` `crash` `cpio` `curl`
-
 ## Usage
 
 Paste a syzbot bug URL in Claude Code:
 
 ```
-https://syzkaller.appspot.com/bug?extid=8b12fc6e0fb139765b58
+fix https://syzkaller.appspot.com/bug?extid=8b12fc6e0fb139765b58
 ```
 
 The skill runs autonomously through: bug triage → asset download → reproducer
