@@ -14,6 +14,9 @@ git clone https://github.com/liyueyi/liyy-crash.git /tmp/liyy-crash
 cd /tmp/liyy-crash && git checkout mcp && make
 
 # 3. Add crash MCP to Claude Code
+# NOTE: This will fail on first connection because the crash server isn't
+# running yet. The skill starts crash --mcp vmcore vmlinux during Phase 6,
+# then Claude Code auto-reconnects. The initial failure is expected.
 claude mcp add crash-mcp -- /tmp/liyy-crash/crash-mcp-client /tmp/crash.sock
 ```
 
