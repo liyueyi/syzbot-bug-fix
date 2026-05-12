@@ -9,11 +9,13 @@ Claude Code skill for fully autonomous syzbot kernel bug fix — from URL to `.p
 mkdir -p .claude/skills
 git clone https://github.com/liyueyi/syzbot-bug-fix.git .claude/skills/syzbot-bug-fix
 
-# 2. Add crash MCP server (for vmcore analysis)
-claude mcp add crash-mcp -- crash-mcp-client /tmp/crash.sock
-```
+# 2. Build crash MCP server (for vmcore analysis)
+git clone https://github.com/liyueyi/liyy-crash.git /tmp/liyy-crash
+cd /tmp/liyy-crash && git checkout mcp && make
 
-The crash MCP server is [liyy-crash](https://github.com/liyueyi/liyy-crash/tree/mcp) (mcp branch).
+# 3. Add crash MCP to Claude Code
+claude mcp add crash-mcp -- /tmp/liyy-crash/crash-mcp-client /tmp/crash.sock
+```
 
 ## Prerequisites
 
