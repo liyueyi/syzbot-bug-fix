@@ -204,7 +204,7 @@ template: |
   echo "All assets validated."
   ```
 
-  **If any asset is missing or invalid → STOP.** Report: "Asset download failed: <details>."
+  **If any asset is missing or invalid → STOP.** Report: `"Asset download failed: <details>."`
   Do NOT proceed to Phase 2 without valid assets.
 
   ---
